@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* LOCK SCREEN */
+#lockScreen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #000, #ff4d6d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lock-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.lock-box input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 80%;
+}
+
+/* MAIN */
+#mainContent {
+  display: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* HERO */
+.hero {
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #fff;
+  color: #ff4d6d;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.2);
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* WISHES */
+#wishList {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.wish {
+  background: rgba(255,255,255,0.3);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+/* BALLOONS */
+.balloons span {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 6s infinite ease-in-out;
+}
+
+.balloons span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.balloons span:nth-child(2) { left: 30%; animation-delay: 1s; }
+.balloons span:nth-child(3) { left: 50%; animation-delay: 2s; }
+.balloons span:nth-child(4) { left: 70%; animation-delay: 3s; }
+.balloons span:nth-child(5) { left: 90%; animation-delay: 4s; }
+
+@keyframes float {
+  0% { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* CONFETTI */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2rem; }
+}
+
+@media (max-width: 480px) {
+  button { width: 100%; }
+}

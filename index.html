@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Preiz 🎉</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<!-- 🔒 LOCK SCREEN -->
+<div id="lockScreen">
+  <div class="lock-box">
+    <h2>Enter Name to Unlock 🎁</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password..."/>
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="error"></p>
+  </div>
+</div>
+
+<!-- 🎉 MAIN CONTENT -->
+<div id="mainContent">
+
+  <!-- 🎵 MUSIC -->
+  <audio id="bgMusic" loop>
+    <source src="hbd.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Happy 18th Birthday Preiz 🎂</h1>
+      <p>A new beautiful chapter begins today ✨</p>
+      <button onclick="startExperience()">Open Your Surprise 🎁</button>
+    </section>
+
+    <!-- MESSAGE -->
+    <section class="card">
+      <h2>A Special Message 💖</h2>
+      <p id="typingText"></p>
+    </section>
+
+    <!-- WISHES -->
+    <section class="card">
+      <h2>Birthday Wishes 💬</h2>
+      <input type="text" id="wishInput" placeholder="Write a wish..."/>
+      <button onclick="addWish()">Send</button>
+      <div id="wishList"></div>
+    </section>
+
+    <!-- BALLOONS -->
+    <div class="balloons">
+      <span>🎈</span>
+      <span>🎈</span>
+      <span>🎈</span>
+      <span>🎈</span>
+      <span>🎈</span>
+    </div>
+
+    <!-- CONFETTI -->
+    <canvas id="confetti"></canvas>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
