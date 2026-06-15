@@ -47,18 +47,45 @@ function typeMessage() {
 }
 
 // 💬 WISHES
-function addWish() {
-  const input = document.getElementById("wishInput");
-  const list = document.getElementById("wishList");
+function displayWish(wishText) {
+    const list = document.getElementById("wishList");
 
-  if (input.value.trim() !== "") {
     const div = document.createElement("div");
     div.className = "wish";
-    div.textContent = input.value;
+    div.textContent = wishText;
+
     list.appendChild(div);
-    input.value = "";
-  }
 }
+
+function addWish() {
+    const input = document.getElementById("wishInput");
+
+    if (input.value.trim() === "") return;
+
+    let wishes = JSON.parse(localStorage.getItem("wishes")) || [];
+
+    wishes.push(input.value);
+
+    localStorage.setItem("wishes",JSON.stringify(wishes)
+    
+        
+    );
+   
+    displayWish(input.value);
+
+    input.value = "";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const wishes =
+        JSON.parse(localStorage.getItem("wishes")) || [];
+
+    wishes.forEach(wish => {
+        displayWish(wish);
+    });
+
+});
 
 // 🎊 CONFETTI
 const canvas = document.getElementById("confetti");
